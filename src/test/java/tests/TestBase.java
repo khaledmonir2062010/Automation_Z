@@ -13,16 +13,17 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utilities.Helper;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests
+{
 	
 	public static WebDriver driver;
 
 	@BeforeSuite
 	@Parameters({"browser"})
-	public void Setup(@Optional("chrome")String browserName)
+	public void Setup(@Optional("firefox")String browserName)
 	{
 		if (browserName.equalsIgnoreCase("firefox")) 
 		{
@@ -54,7 +55,7 @@ public class TestBase {
 		
 		driver.manage().window().maximize();
 		//Open URL of my AUT application
-		driver.navigate().to("http://automationpractice.com/index.php");
+		driver.navigate().to("https://newres-staging.zyda.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	

@@ -14,15 +14,26 @@ public class HomePage extends PageBase {
 	}
 	
 	
-	//The Sign-in Element With its method
+	//Localization button
 	
-	@FindBy(className="login")
-	WebElement Signin_Link;
+	@FindBy(css=".rtl-1jq3qyv svg")
+	WebElement Localization_btn;
 	
-	public void OpenSignIN_Link()
+	public void lang_select()
 	{
 		
-		clickButton(Signin_Link);
+		clickButton(Localization_btn);
+	}
+	
+	//The Sign-in Element With its method
+	
+	@FindBy(css=".ltr-bbnxor")
+	WebElement StartOrder_btn;
+	
+	public void StartOrder_Action()
+	{
+		
+		clickButton(StartOrder_btn);
 		
 	}
 	
